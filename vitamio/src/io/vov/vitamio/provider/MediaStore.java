@@ -60,7 +60,9 @@ public final class MediaStore {
     return Uri.parse(CONTENT_AUTHORITY_SLASH + MEDIA_SCANNER_VOLUME);
   }
 
-  public interface MediaColumns extends BaseColumns {
+  public interface MediaColumns  {
+    public static final java.lang.String _ID = "_id";
+    public static final java.lang.String _COUNT = "_count";
     public static final String DATA = "_data";
     public static final String DIRECTORY = "_directory";
     public static final String DIRECTORY_NAME = "_directory_name";
@@ -77,7 +79,9 @@ public final class MediaStore {
   }
 
   public static final class Audio {
-    public interface AudioColumns extends MediaColumns {
+    public interface AudioColumns {
+      public static final java.lang.String _ID = "_id";
+      public static final java.lang.String _COUNT = "_count";
       public static final String DURATION = "duration";
       public static final String BOOKMARK = "bookmark";
       public static final String ARTIST = "artist";
@@ -147,7 +151,9 @@ public final class MediaStore {
           "END";
     }
 
-    public static class Thumbnails implements BaseColumns {
+    public static class Thumbnails {
+      public static final java.lang.String _ID = "_id";
+      public static final java.lang.String _COUNT = "_count";
       public static final int MINI_KIND = 1;
       public static final int MICRO_KIND = 3;
       public static final Uri CONTENT_URI = Uri.parse(CONTENT_AUTHORITY_SLASH + "videos/thumbnails");
@@ -193,7 +199,9 @@ public final class MediaStore {
     }
   }
 
-  private static class InternalThumbnails implements BaseColumns {
+  private static class InternalThumbnails {
+    private static java.lang.String _ID = "_id";
+    private static java.lang.String _COUNT = "_count";
     static final int DEFAULT_GROUP_ID = 0;
     private static final int MINI_KIND = 1;
     private static final int MICRO_KIND = 3;
